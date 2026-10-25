@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply antialiased;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-charcoal-900 font-sans;
+  }
+  [dir='rtl'] body {
+    @apply font-arabic;
+  }
+}
+
+@layer components {
+  .container-app {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-gold-500 px-5 py-3 text-sm font-semibold text-charcoal-950 transition-colors hover:bg-gold-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-300 focus-visible:ring-offset-2 disabled:opacity-50;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-charcoal-300 px-5 py-3 text-sm font-semibold text-charcoal-800 transition-colors hover:border-charcoal-900 hover:bg-charcoal-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-500 focus-visible:ring-offset-2;
+  }
+  .btn-outline-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-white/30 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal-950;
+  }
+  .input-field {
+    @apply w-full rounded-lg border border-charcoal-200 bg-white px-4 py-3 text-sm text-charcoal-900 placeholder:text-charcoal-400 focus:border-gold-500 focus:outline-none focus:ring-1 focus:ring-gold-500;
+  }
+  .section-title {
+    @apply text-2xl font-bold tracking-tight text-charcoal-900 sm:text-3xl;
+  }
+  .badge-demo {
+    @apply inline-flex items-center gap-1 rounded-full border border-gold-300 bg-gold-50 px-2.5 py-0.5 text-[11px] font-medium uppercase tracking-wide text-gold-800;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.5s ease-out both;
+}
