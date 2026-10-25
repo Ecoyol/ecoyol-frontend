@@ -1,6 +1,5 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 import type { Filters } from '@/data/properties';
-import type { City } from '@/data/properties';
 
 export function navigate(to: string) {
   window.history.pushState({}, '', to);
@@ -44,13 +43,11 @@ export function Link({
   className,
   children,
   ariaLabel,
-  onClick,
 }: {
   to: string;
   className?: string;
   children: ReactNode;
   ariaLabel?: string;
-  onClick?: () => void;
 }) {
   const { navigate } = useRouter();
   return (
@@ -62,7 +59,6 @@ export function Link({
         if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
         e.preventDefault();
         navigate(to);
-        onClick?.();
       }}
     >
       {children}

@@ -10,12 +10,12 @@ function groupAr(n: number): string {
   return n.toLocaleString('ar-IQ', { useGrouping: true });
 }
 
-/** Full format: 620,000,000 IQD (or ٦٢٠٬٠٠٠٬٠٠٠ IQD in Arabic numerals). */
+/** Full format: 620,000,000 IQD (or Arabic-Indic numerals in Arabic). */
 export function formatIqd(iqd: number, lang: 'en' | 'ar'): string {
   return `${(lang === 'ar' ? groupAr(iqd) : groupEn(iqd))} ${IQD}`;
 }
 
-/** Compact format for cards: 620M IQD / 1.1M IQD / 900K IQD (ألف/مليون in Arabic). */
+/** Compact format for cards: 620M IQD / 1.1M IQD / 900K IQD (مليون/ألف in Arabic). */
 export function formatIqdCompact(iqd: number, lang: 'en' | 'ar'): string {
   if (iqd >= 1_000_000) {
     const m = iqd / 1_000_000;
