@@ -43,11 +43,14 @@ npm run lint       # ESLint
 ## Project structure
 
 ```
-src/
-  components/   # Navbar, Footer, PropertyCard, shared UI states
-  data/         # Property types + clearly-labelled demo listings
-  lib/          # i18n (EN/AR + RTL), routing, IQD formatting
-  pages/        # One file per page
+src/                 # Public site (builds today)
+  components/        # Navbar, Footer, PropertyCard, shared UI states
+  data/              # Property types + clearly-labelled demo listings
+  lib/               # i18n (EN/AR + RTL), routing, IQD formatting
+  pages/             # One file per page
+crm-pending/         # CRM + Supabase code awaiting recovery (not compiled)
+supabase/migrations/ # Reviewed, additive SQL migrations (empty for now)
+.env.example         # Required env vars (copy to .env, never commit .env)
 ```
 
 ## Roadmap
@@ -59,3 +62,15 @@ src/
 ## License
 
 Proprietary — © 2026 Ecoyol. All rights reserved.
+
+## Development
+
+```
+nvm use          # Node 20
+npm install
+cp .env.example .env   # fill the public Supabase URL and anon key
+npm run dev
+npm run typecheck && npm run lint && npm run build
+```
+
+See `docs/ARCHITECTURE.md` for standards and `docs/ROADMAP.md` for the plan.
