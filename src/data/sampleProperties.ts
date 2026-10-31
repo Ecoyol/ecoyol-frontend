@@ -1,5 +1,87 @@
 import type { Property } from './properties';
 
+type LocalizedLabel = Readonly<{ en: string; ar: string }>;
+
+export const GOVERNORATES: Record<Property['governorate'], LocalizedLabel> = {
+  baghdad: { en: 'Baghdad', ar: 'بغداد' },
+  erbil: { en: 'Erbil', ar: 'أربيل' },
+  basra: { en: 'Basra', ar: 'البصرة' },
+  najaf: { en: 'Najaf', ar: 'النجف' },
+  sulaymaniyah: { en: 'Sulaymaniyah', ar: 'السليمانية' },
+  nineveh: { en: 'Nineveh', ar: 'نينوى' },
+};
+
+export const CITIES: Record<Property['city'], LocalizedLabel> = {
+  baghdad: { en: 'Baghdad', ar: 'بغداد' },
+  erbil: { en: 'Erbil', ar: 'أربيل' },
+  basra: { en: 'Basra', ar: 'البصرة' },
+  najaf: { en: 'Najaf', ar: 'النجف' },
+  sulaymaniyah: { en: 'Sulaymaniyah', ar: 'السليمانية' },
+  mosul: { en: 'Mosul', ar: 'الموصل' },
+};
+
+export const DISTRICTS: Record<Property['district'], LocalizedLabel> = {
+  'al-mansour': { en: 'Al Mansour', ar: 'المنصور' },
+  jadriya: { en: 'Jadriya', ar: 'الجادرية' },
+  karrada: { en: 'Karrada', ar: 'الكرادة' },
+  adhamiyah: { en: 'Adhamiyah', ar: 'الأعظمية' },
+  downtown: { en: 'Downtown', ar: 'وسط المدينة' },
+  'italian-village': { en: 'Italian Village', ar: 'القرية الإيطالية' },
+  corniche: { en: 'Corniche', ar: 'الكورنيش' },
+  'qarmat-ali': { en: 'Qarmat Ali', ar: 'كرمة علي' },
+  'al-ghadir': { en: 'Al Ghadir', ar: 'الغدير' },
+  ashti: { en: 'Ashti', ar: 'آشتي' },
+  'al-zuhour': { en: 'Al Zuhour', ar: 'الزهور' },
+};
+
+export const PROPERTY_TYPES: Record<Property['type'], LocalizedLabel> = {
+  apartment: { en: 'Apartment', ar: 'شقة' },
+  villa: { en: 'Villa', ar: 'فيلا' },
+  house: { en: 'House', ar: 'منزل' },
+  office: { en: 'Office', ar: 'مكتب' },
+  land: { en: 'Land', ar: 'أرض' },
+};
+
+export const PURPOSES: Record<Property['purpose'], LocalizedLabel> = {
+  sale: { en: 'For sale', ar: 'للبيع' },
+  rent: { en: 'For rent', ar: 'للإيجار' },
+};
+
+export const GOVERNORATE_CITIES: Record<Property['governorate'], Property['city'][]> = {
+  baghdad: ['baghdad'],
+  erbil: ['erbil'],
+  basra: ['basra'],
+  najaf: ['najaf'],
+  sulaymaniyah: ['sulaymaniyah'],
+  nineveh: ['mosul'],
+};
+
+export const SALE_BUDGET_STEPS_IQD: number[] = [
+  50_000_000,
+  100_000_000,
+  150_000_000,
+  200_000_000,
+  300_000_000,
+  500_000_000,
+  750_000_000,
+  1_000_000_000,
+  1_500_000_000,
+  2_000_000_000,
+];
+
+export const RENT_BUDGET_STEPS_IQD: number[] = [
+  250_000,
+  500_000,
+  750_000,
+  1_000_000,
+  1_500_000,
+  2_000_000,
+  3_000_000,
+  5_000_000,
+  7_500_000,
+  10_000_000,
+];
+
 export const SAMPLE_PROPERTIES: Property[] = [
   {
     id: 'demo-001',
