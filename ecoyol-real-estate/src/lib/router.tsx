@@ -1,6 +1,5 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 import type { Filters } from '@/data/properties';
-import type { City } from '@/data/properties';
 
 export function navigate(to: string) {
   window.history.pushState({}, '', to);

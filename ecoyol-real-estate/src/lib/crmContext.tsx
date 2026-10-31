@@ -1,7 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 import {
   DEMO_EMPLOYEES,
-  DEMO_CUSTOMERS,
   DEMO_REQUESTS,
   DEMO_CRM_PROPERTIES,
   DEMO_TASKS,
@@ -17,7 +16,7 @@ import {
   type Campaign,
   type Role,
 } from '@/data/crm';
-import { fetchClients, insertClient, updateClient, seedSampleClients } from '@/lib/clientsApi';
+import { fetchClients, insertClient, updateClient } from '@/lib/clientsApi';
 
 interface CrmContextValue {
   employees: Employee[];

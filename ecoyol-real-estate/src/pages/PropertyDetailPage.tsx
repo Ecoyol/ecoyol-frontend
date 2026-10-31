@@ -16,7 +16,7 @@ import { Link, useRouter } from '@/lib/router';
 import { useLang } from '@/lib/i18n';
 import { usePriceFormatter } from '@/lib/format';
 import { PropertyCard } from '@/components/PropertyCard';
-import { LoadingState, WhatsAppButton } from '@/components/ui';
+import { WhatsAppButton } from '@/components/ui';
 import {
   CITIES,
   DISTRICTS,
@@ -33,6 +33,7 @@ export function PropertyDetailPage({ slug }: { slug: string }) {
   const [imageLoading, setImageLoading] = useState(true);
 
   const property = useMemo(() => SAMPLE_PROPERTIES.find((p) => p.slug === slug), [slug]);
+  const fmt = usePriceFormatter();
 
   if (!property) {
     return (
@@ -57,7 +58,6 @@ export function PropertyDetailPage({ slug }: { slug: string }) {
   const cityLabel = t(CITIES[property.city]);
   const districtLabel = t(DISTRICTS[property.district]);
   const purposeLabel = t(PURPOSES[property.purpose]);
-  const fmt = usePriceFormatter();
   const price = fmt.full(property.priceIqd);
   const period = property.purpose === 'rent' ? (lang === 'ar' ? 'شهريًا' : 'per month') : '';
 
